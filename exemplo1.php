@@ -6,11 +6,24 @@ No private elas não podendo ser acessadas de fora da classe, ela fica segura
 assim, ela terá que receber um valor através de uma função e mostra-lo através de outra
 
 os valores serão atribuidos atraves de um atributo passado na função;
+
+*/
+
+// METODO __construct
+/* 
+    Podemos substituir as function de inserir os valores (sets) passando os atributos
+    nos parametros do contruct, que é chamado na construção da classe.
+
 */
 
 class Produto{
     private $descricao;
     private $preco;
+
+    public function __contruct($descricao, $preco){
+        $this->descricao = $descricao;
+        $this->preco = $preco;
+    }
 
     public function getDetalhe(){
         return ;
@@ -44,15 +57,15 @@ class Produto{
 
 
 // instanciando a classe PRODUTO a uma variável
-$p1 = new Produto;
+$p1 = new Produto('Carro',50.00);
 
 // passando os valores 
-$p1->setDescricao('Tesoura');
-$p1->setPreco(50.00);
+// $p1->setDescricao('Tesoura');
+// $p1->setPreco(50.00);
 
 // exibindo os valores
 echo "Produto: ".$p1->getDescricao().". <br>";
-echo "Preco ".$p1->getPReco().". ";
+echo "Preco ".$p1->getPreco().". ";
 
 
 ?>
